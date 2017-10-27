@@ -24,8 +24,7 @@ public class BoundedWildcards {
 
         // lowerBoundedWildcard examples
         List<RuntimeException> someListD = new ArrayList<>();
-        // lowerBoundedWildcard(someListD); // --> Will not compile since RuntimeException is not a superclass of exception.
-
+        // lowerBoundedWildcard(someListD); // --> Will not compile since...
         List<Throwable> someListE = new ArrayList<>();
         lowerBoundedWildcard(someListE);
     }
