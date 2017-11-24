@@ -1,4 +1,4 @@
-package javaexamples.cert.collections;
+package javaexamples.cert.collections.lists;
 
 import java.util.Collection;
 import java.util.Iterator;

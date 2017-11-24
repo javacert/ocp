@@ -1,9 +1,15 @@
-package javaexamples.cert.collections;
+package javaexamples.cert.collections.queues;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Queue;
 
+// Notes
+// 1. You cannot put null in an ArrayDeque because methods like poll() use null as a special return to indicate that the
+//    collection is empty.
+
+// Scenarios - when to use?
+// 1. When you want to pick something from a stack of maps (LI-FO data structure). Stack could be used, but shouldn't be for new code.
 public class ArrayDequeExamples {
 
     public static void main(String[] args){
