@@ -1,4 +1,4 @@
-package javaexamples.cert.builder;
+package javaexamples.cert.patterns.builder;
 
 import javaexamples.cert.immutability.ImmutableClassExample;
 

@@ -1,4 +1,4 @@
-package javaexamples.cert.factory;
+package javaexamples.cert.patterns.factory;
 
 // Notes
 // The factory pattern is a creational pattern based on the idea of using a factory class to produce instances of objects
