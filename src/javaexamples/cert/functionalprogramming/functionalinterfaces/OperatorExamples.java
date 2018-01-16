@@ -5,7 +5,7 @@ import java.util.function.UnaryOperator;
 
 // Notes
 // 1. Both Unary and Binary Operator interfaces require all type parameters to be the same type.
-// 2. A UnaryOperator tranforms its value into one of the same type (and extends Function)
+// 2. A UnaryOperator transforms its value into one of the same type (and extends Function)
 // 3. A BinaryOperator merges 2 values into one of the same type. E.g. Adding 2 numbers is a binary operation.
 //    BinaryOperator extends BiFunction.
 // 4. There is no need to specify the return type as it is the same as the parameter.
@@ -13,6 +13,7 @@ public class OperatorExamples {
     public static void main(String[] args){
         unaryOperatorExamples();
         binaryOperatorExamples();
+        invalidUnaryOperatorExamples();
     }
 
     private static void unaryOperatorExamples() {
@@ -23,6 +24,10 @@ public class OperatorExamples {
     private static void binaryOperatorExamples() { // public interface BinaryOperator<T> extends BiFunction<T,T,T> {
         BinaryOperator<String> b1 = String::concat;
         System.out.println(b1.apply("First String ", "Second String")); // First String Second String
+    }
+
+    private static void invalidUnaryOperatorExamples() {
+        // UnaryOperator<Long> u1 = (Long l) -> 3.13; // --> Should return the same type, but returns a double
     }
 }
 

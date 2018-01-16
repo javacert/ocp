@@ -4,7 +4,7 @@ import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 // Notes
-// 1. A Predicate takes one parameter and returns a boolean.
+// 1. A Predicate takes one parameter and returns a boolean. Note that it returns a boolean primitive and not a wrapper.
 // 2. A BiPredicate takes 2 parameters and returns a boolean.
 public class PredicateExamples {
     public static void main(String[] args){
@@ -14,6 +14,10 @@ public class PredicateExamples {
     private static void predicateExamples() {
         Predicate<String> p1 = String::isEmpty;
         BiPredicate<String, String> p2 = String::startsWith;
+    }
+
+    private static void invalidPredicateExamples() {
+        // Predicate p1 = String::isEmpty; // --> Doesn't have the generic type
     }
 }
 

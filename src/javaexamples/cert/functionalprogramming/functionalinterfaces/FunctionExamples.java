@@ -1,5 +1,6 @@
 package javaexamples.cert.functionalprogramming.functionalinterfaces;
 
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -9,6 +10,7 @@ import java.util.function.Function;
 public class FunctionExamples {
     public static void main(String[] args){
         functionExamples();
+        invalidFunctionExamples();
     }
 
     private static void functionExamples() {
@@ -19,6 +21,10 @@ public class FunctionExamples {
         // Takes 2 Strings and returns a String
         BiFunction<String, String, String> f2 = String::concat; // Assigns public String concat(String str) {
         System.out.println(f2.apply("AStringToConcat", "AnotherStringToConcat"));
+    }
+
+    private static void invalidFunctionExamples() {
+        // Function<List<String>> f1 = x -> x.get(0); // --> Function expects 2 generic parameters
     }
 }
 
