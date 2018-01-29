@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 // 1. A stream is a sequence of data.
 // 2. A stream pipeline is the operations that run on a stream to produce a result
 // 3. Streams do not implement Iterable interface and therefore cannot be used with traditional for loops
-// 4. Streams can only be used once --> Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
+// 4. Streams can only be used once if the operation is destructive --> Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
 public class StreamExamples {
 
     public static void main(String[] args){
