@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
-// Notes
+// Notes:
 // 1. Intermediate streams deal with an infinite stream simply by returning an infinite stream.
 public class StreamsCommonIntermediateOperations {
 
