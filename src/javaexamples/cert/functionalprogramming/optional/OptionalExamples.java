@@ -16,6 +16,8 @@ public class OptionalExamples {
 
     public static void main(String[] args){
         basicOptionalExamples();
+        chainingOptional();
+        usingFlatMapWithOptional();
     }
 
     private static void basicOptionalExamples() {
@@ -31,6 +33,37 @@ public class OptionalExamples {
         // Remember if a value is present it would print out that value, but in these cases the value is null.
         System.out.println(someOptionalIntegerC.orElse(20)); // 20
         System.out.println(someOptionalIntegerC.orElseGet((new Double(Math.random())::intValue))); // 0
-        System.out.println(someOptionalIntegerC.orElseThrow(IllegalStateException::new)); // Exception in thread "main" java.lang.IllegalStateException
+        // System.out.println(someOptionalIntegerC.orElseThrow(IllegalStateException::new)); // Exception in thread "main" java.lang.IllegalStateException
+    }
+
+    private static void chainingOptional() {
+        // We can chain Optional to make it much more expressive and avoid nested if statements
+        Optional<Integer> optional = Optional.of(123);
+        optional.map(n -> "" + n)                   // Convert it to a String Collection
+                .filter(s -> s.length() == 3)       // filter out any entries which do not have a length of 3
+                .ifPresent(System.out::println);    // 123 - print the vale if it is present
+
+        // A note on optional filter:
+        // * If a value is present, and the value matches the given predicate,
+        // * return an {@code Optional} describing the value, otherwise return an
+        // * empty {@code Optional}.
+    }
+
+    private static void usingFlatMapWithOptional() {
+        // What if we wanted to get an Optional<Integer> representing the length of a String contained in another Optional?
+        // We could do:
+        Optional<String> optional = Optional.of("123");
+        Optional<Integer> result = optional.map(String::length);
+
+        // but what if we had a helper method that worked this out for us?
+        // Optional<Integer> result2 = optional.map(OptionalExamples::getTheLength); --> Does not compile
+        // Why - because it would give us Optional<Optional<Integer>>
+
+        Optional<Integer> result3 = optional.flatMap(OptionalExamples::getTheLength); // Removes the unnecessary layer
+
+    }
+
+    private static Optional<Integer> getTheLength(String s){
+        return Optional.of(s.length());
     }
 }

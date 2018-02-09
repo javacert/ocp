@@ -16,3 +16,5 @@ Miscellaneous Notes:
    * O(n) --> linear time. Performance grows linearly with respect to the size of the collection. E.g. Looping through
               a growing list of elements.
    * O(n2) --> n squared time. Code that has nested loops where each loop goes through the data.
+2. Note that functional interfaces do not declare checked exceptions - this can be a problem for methods that do declare
+   checked exceptions. Recommended solution is to wrap method in another method which has a try/catch - see page 216.
