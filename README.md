@@ -18,3 +18,7 @@ Miscellaneous Notes:
    * O(n2) --> n squared time. Code that has nested loops where each loop goes through the data.
 2. Note that functional interfaces do not declare checked exceptions - this can be a problem for methods that do declare
    checked exceptions. Recommended solution is to wrap method in another method which has a try/catch - see page 216.
+3. To calculate international times differences, work out the GMT/UCT (both zero time and equivalent in that regard) - e.g.:
+   - 2015-06-20T07:50-07:00[US/Pacific]     --> time in GMT is 14:50 (plus the difference)
+   - 2015-06-20T07:50+5.30[Asia/Kolkata]    --> time in GMT is 2.20  (minus the difference)
+   --> Total time difference is 12hrs 30 mins
